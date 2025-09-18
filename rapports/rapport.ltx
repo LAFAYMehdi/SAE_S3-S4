@@ -1,0 +1,437 @@
+\documentclass[12pt,a4paper]{article}
+
+% Packages essentiels
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[french]{babel}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage{tocloft}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\usepackage{array}
+\usepackage{tabularx}
+\usepackage{enumitem}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{float}
+\usepackage{colortbl}
+
+% Configuration de la page
+\geometry{
+    left=2.5cm,
+    right=2.5cm,
+    top=2.5cm,
+    bottom=2.5cm
+}
+
+% Configuration des couleurs
+\definecolor{maincolor}{RGB}{41, 128, 185}
+\definecolor{secondcolor}{RGB}{52, 73, 94}
+\definecolor{accentcolor}{RGB}{231, 76, 60}
+
+% Configuration des liens hypertexte
+\hypersetup{
+    colorlinks=true,
+    linkcolor=maincolor,
+    filecolor=maincolor,
+    urlcolor=maincolor,
+    citecolor=maincolor
+}
+
+% Configuration des en-têtes et pieds de page
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\textcolor{maincolor}{\leftmark}}
+\fancyhead[R]{\textcolor{maincolor}{Rapport de présentation}}
+\fancyfoot[C]{\thepage}
+\renewcommand{\headrulewidth}{0.5pt}
+\renewcommand{\headrule}{\hbox to\headwidth{\color{maincolor}\leaders\hrule height \headrulewidth\hfill}}
+
+% Style des titres
+\titleformat{\section}
+{\Large\bfseries\color{maincolor}}
+{\thesection}{1em}{}
+[\titlerule]
+
+\titleformat{\subsection}
+{\large\bfseries\color{secondcolor}}
+{\thesubsection}{1em}{}
+
+\titleformat{\subsubsection}
+{\normalsize\bfseries\color{secondcolor}}
+{\thesubsubsection}{1em}{}
+
+% Configuration du sommaire
+\renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}}
+\renewcommand{\cftsecfont}{\bfseries\color{maincolor}}
+
+% Informations du document
+\title{GP Explorer - Système de gestion événementielle}
+\author{BELEY Gauthier, DIDIER Baptiste, DUARTE Antoine, LAFAY Mehdi, LORENZINI Thomas}
+\date{26 septembre 2025}
+
+\begin{document}
+
+% ========================================
+% PAGE DE GARDE
+% ========================================
+\begin{titlepage}
+    \centering
+    
+    % Bandeau supérieur avec institution
+    \colorbox{maincolor}{\makebox[\textwidth]{\textcolor{white}{\Large\textbf{IUT Nord Franche-Comté}}}}
+    {\large \textcolor{secondcolor}{\textbf{Université de Franche-Comté - BUT Informatique}} \par}
+    
+    \vspace{3cm}
+    
+    % Titre principal avec encadré
+    \begin{center}
+        \fcolorbox{maincolor}{white}{
+            \begin{minipage}{0.85\textwidth}
+                \centering
+                \vspace{0.5cm}
+                {\Huge \textcolor{maincolor}{\textbf{GP Explorer}} \par}
+                \vspace{0.3cm}
+                {\LARGE \textcolor{secondcolor}{\textit{Système de gestion événementielle}} \par}
+                \vspace{0.5cm}
+            \end{minipage}
+        }
+    \end{center}
+    
+    \vspace{1cm}
+    
+    % Sous-titre
+    {\Large \textcolor{accentcolor}{\textbf{SAE S3-S4 - Présentation du projet}} \par}
+    {\large \textit{Mini-rapport de présentation du sujet} \par}
+    
+    \vspace{2cm}
+    
+    % Équipe projet dans un tableau plus élégant
+    \begin{center}
+        \renewcommand{\arraystretch}{1.3}
+        \begin{tabular}{|>{\centering}p{4cm}|>{\centering\arraybackslash}p{2cm}|}
+            \hline
+            \rowcolor{maincolor!20}
+            \textbf{\textcolor{maincolor}{Membre de l'équipe}} & \textbf{\textcolor{maincolor}{Groupe}} \\
+            \hline
+            \textbf{BELEY Gauthier} & A1 \\
+            \hline
+            \textbf{DIDIER Baptiste} & B1 \\
+            \hline
+            \textbf{DUARTE Antoine} & B1 \\
+            \hline
+            \textbf{LAFAY Mehdi} & B1 - \textcolor{accentcolor}{\textbf{Référent}} \\
+            \hline
+            \textbf{LORENZINI Thomas} & B2 \\
+            \hline
+        \end{tabular}
+    \end{center}
+    
+    \vfill
+    
+    % Informations de bas de page dans un encadré
+    \begin{center}
+        \fcolorbox{secondcolor}{secondcolor!10}{
+            \begin{minipage}{0.6\textwidth}
+                \centering
+                \textcolor{secondcolor}{\textbf{Date de présentation :}} 26 septembre 2025 \\[0.2cm]
+                \textcolor{secondcolor}{\textbf{Année universitaire :}} 2025-2026
+            \end{minipage}
+        }
+    \end{center}
+    
+    \vspace{1cm}
+    
+\end{titlepage}
+
+% ========================================
+% SOMMAIRE
+% ========================================
+\newpage
+\thispagestyle{empty}
+\mbox{}
+\newpage
+\tableofcontents
+\newpage
+\thispagestyle{empty}
+\mbox{}
+\newpage
+
+% ========================================
+% CONTENU PRINCIPAL
+% ========================================
+
+\section{Introduction}
+
+% Introduction générale du projet
+[Présentation générale du contexte de la SAE S3-S4 et des objectifs de ce rapport de présentation.]
+
+\section{Thème du projet et motivations}
+
+\subsection{Choix du thème}
+% Décrire le thème choisi
+[Description détaillée du thème sélectionné pour le projet.]
+
+\subsection{Motivations}
+% Expliquer pourquoi ce thème a été choisi
+\begin{itemize}
+    \item \textbf{Pertinence académique :} [Explication]
+    \item \textbf{Intérêt technique :} [Explication]
+    \item \textbf{Applications pratiques :} [Explication]
+    \item \textbf{Défis techniques :} [Explication]
+\end{itemize}
+
+\section{Cadre géographique}
+
+\subsection{Zone d'étude}
+% Description de la zone géographique concernée
+[Description de la zone géographique couverte par le projet.]
+
+\subsection{Première ébauche cartographique}
+% Insérer une première version de la carte ou un schéma
+\begin{figure}[H]
+    \centering
+    % \includegraphics[width=0.8\textwidth]{chemin_vers_carte.png}
+    \fbox{\parbox{0.8\textwidth}{\centering \vspace{2cm} [Insérer ici la première ébauche de carte] \vspace{2cm}}}
+    \caption{Première ébauche de la carte géographique du projet}
+    \label{fig:carte}
+\end{figure}
+
+\section{Types de prestataires et activités}
+
+\subsection{Catégories de prestataires}
+
+% Tableau récapitulatif des prestataires
+\begin{table}[H]
+    \centering
+    \begin{tabularx}{\textwidth}{|l|X|X|}
+        \hline
+        \textbf{Type de prestataire} & \textbf{Activités} & \textbf{Besoins logistiques} \\
+        \hline
+        [Type 1] & 
+        \begin{itemize}[noitemsep]
+            \item Activité A
+            \item Activité B
+        \end{itemize} & 
+        \begin{itemize}[noitemsep]
+            \item Dimension : [spécifications]
+            \item Accès eau : [requis/non requis]
+            \item Accès électricité : [spécifications]
+            \item Autre : [spécifications]
+        \end{itemize} \\
+        \hline
+        [Type 2] & 
+        \begin{itemize}[noitemsep]
+            \item Activité C
+            \item Activité D
+        \end{itemize} & 
+        \begin{itemize}[noitemsep]
+            \item Dimension : [spécifications]
+            \item Accès eau : [requis/non requis]
+            \item Accès électricité : [spécifications]
+            \item Autre : [spécifications]
+        \end{itemize} \\
+        \hline
+        [Type 3] & 
+        \begin{itemize}[noitemsep]
+            \item Activité E
+            \item Activité F
+        \end{itemize} & 
+        \begin{itemize}[noitemsep]
+            \item Dimension : [spécifications]
+            \item Accès eau : [requis/non requis]
+            \item Accès électricité : [spécifications]
+            \item Autre : [spécifications]
+        \end{itemize} \\
+        \hline
+    \end{tabularx}
+    \caption{Types de prestataires et leurs besoins logistiques}
+    \label{tab:prestataires}
+\end{table}
+
+\section{Services fournis}
+
+\subsection{Description des services}
+
+\subsubsection{Service 1 : [Nom du service]}
+\textbf{Description :} [Description du service]
+
+\textbf{Données manipulées :}
+\begin{itemize}
+    \item \textit{Exemple 1 :} [Description de la donnée]
+    \item \textit{Exemple 2 :} [Description de la donnée]
+    \item \textit{Exemple 3 :} [Description de la donnée]
+\end{itemize}
+
+\textbf{Données collectées :}
+\begin{itemize}
+    \item \textit{Type A :} [Description]
+    \item \textit{Type B :} [Description]
+    \item \textit{Type C :} [Description]
+\end{itemize}
+
+\subsubsection{Service 2 : [Nom du service]}
+\textbf{Description :} [Description du service]
+
+\textbf{Données manipulées :}
+\begin{itemize}
+    \item \textit{Exemple 1 :} [Description de la donnée]
+    \item \textit{Exemple 2 :} [Description de la donnée]
+    \item \textit{Exemple 3 :} [Description de la donnée]
+\end{itemize}
+
+\textbf{Données collectées :}
+\begin{itemize}
+    \item \textit{Type A :} [Description]
+    \item \textit{Type B :} [Description]
+    \item \textit{Type C :} [Description]
+\end{itemize}
+
+\subsubsection{Service 3 : [Nom du service]}
+\textbf{Description :} [Description du service]
+
+\textbf{Données manipulées :}
+\begin{itemize}
+    \item \textit{Exemple 1 :} [Description de la donnée]
+    \item \textit{Exemple 2 :} [Description de la donnée]
+    \item \textit{Exemple 3 :} [Description de la donnée]
+\end{itemize}
+
+\textbf{Données collectées :}
+\begin{itemize}
+    \item \textit{Type A :} [Description]
+    \item \textit{Type B :} [Description]
+    \item \textit{Type C :} [Description]
+\end{itemize}
+
+\section{Statistiques et visualisations}
+
+\subsection{Types de statistiques prévues}
+
+\subsubsection{Statistiques basées sur le Service 1}
+\textbf{Objectif :} [Description de l'objectif]
+
+\textbf{Métriques calculées :}
+\begin{itemize}
+    \item [Métrique 1] : [Description et utilité]
+    \item [Métrique 2] : [Description et utilité]
+    \item [Métrique 3] : [Description et utilité]
+\end{itemize}
+
+\textbf{Visualisation prévue :} [Description du type de graphique/carte/dashboard]
+
+\subsubsection{Statistiques basées sur le Service 2}
+\textbf{Objectif :} [Description de l'objectif]
+
+\textbf{Métriques calculées :}
+\begin{itemize}
+    \item [Métrique 1] : [Description et utilité]
+    \item [Métrique 2] : [Description et utilité]
+    \item [Métrique 3] : [Description et utilité]
+\end{itemize}
+
+\textbf{Visualisation prévue :} [Description du type de graphique/carte/dashboard]
+
+\subsubsection{Statistiques croisées}
+\textbf{Objectif :} [Description de l'objectif des analyses croisées]
+
+\textbf{Corrélations étudiées :}
+\begin{itemize}
+    \item [Service X] ↔ [Service Y] : [Type d'analyse]
+    \item [Données A] ↔ [Données B] : [Type d'analyse]
+\end{itemize}
+
+\subsection{Mockups des visualisations}
+
+% Insérer des ébauches de visualisations
+\begin{figure}[H]
+    \centering
+    \fbox{\parbox{0.7\textwidth}{\centering \vspace{2cm} [Ébauche de graphique/dashboard 1] \vspace{2cm}}}
+    \caption{Exemple de visualisation statistique prévue}
+    \label{fig:viz1}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \fbox{\parbox{0.7\textwidth}{\centering \vspace{2cm} [Ébauche de graphique/dashboard 2] \vspace{2cm}}}
+    \caption{Exemple de carte de données géographiques}
+    \label{fig:viz2}
+\end{figure}
+
+\section{Conclusion et perspectives}
+
+% Synthèse et prochaines étapes
+[Synthèse du projet présenté et présentation des prochaines étapes de développement.]
+
+% ========================================
+% GLOSSAIRE
+% ========================================
+\newpage
+\section*{Glossaire}
+\addcontentsline{toc}{section}{Glossaire}
+
+\begin{description}
+    \item[Terme 1] : Définition du terme 1
+    \item[Terme 2] : Définition du terme 2
+    \item[Terme 3] : Définition du terme 3
+    \item[SAE] : Situation d'Apprentissage et d'Évaluation
+    \item[API] : Application Programming Interface
+    \item[Base de données] : Système de gestion de données structurées
+    % Ajouter d'autres termes selon le contexte du projet
+\end{description}
+
+% ========================================
+% ANNEXES (si nécessaire)
+% ========================================
+\newpage
+\section*{Annexes}
+\addcontentsline{toc}{section}{Annexes}
+
+\subsection*{Annexe A : Schémas techniques}
+[Si nécessaire, insérer des schémas techniques détaillés]
+
+\subsection*{Annexe B : Références}
+[Si nécessaire, lister les références bibliographiques]
+
+% ========================================
+% QUATRIÈME DE COUVERTURE
+% ========================================
+\newpage
+\thispagestyle{empty}
+\vspace*{\fill}
+
+\begin{center}
+    \Large \textbf{Quatrième de couverture}
+    \vspace{2cm}
+    
+    \begin{minipage}{0.8\textwidth}
+        \centering
+        
+        \textbf{Résumé du projet}
+        
+        \vspace{1cm}
+        
+        Ce rapport présente le projet \textbf{GP Explorer}, un système de gestion événementielle développé dans le cadre de la SAE S3-S4. Il détaille le cadre géographique d'implémentation, les types de prestataires et d'activités concernés, les services fournis par la plateforme ainsi que les statistiques et visualisations prévues pour optimiser la gestion des événements.
+        
+        \vspace{1cm}
+        
+        \textbf{Mots-clés :} gestion événementielle, cartographie interactive, prestataires, logistique, analyse de données
+        
+        \vspace{2cm}
+        
+        \textbf{Contact}
+        
+        IUT Nord Franche-Comté \\
+        Université de Franche-Comté \\
+        BUT Informatique \\
+        \texttt{mehdi.lafay@edu.univ-fcomte.fr}
+        
+    \end{minipage}
+\end{center}
+
+\vspace*{\fill}
+
+\end{document}
